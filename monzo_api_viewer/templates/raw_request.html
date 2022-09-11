@@ -1,0 +1,35 @@
+<h2>Raw Request</h2>
+<form id="form" hx-post="/raw_request" hx-swap="innerHTML" hx-target="#extra">
+    <div class="row">
+        <div class="col-3"><label for="path">Path</label></div>
+        <div class="col-9"><input type="text" name="path" id="path" class="col-9" /></div>
+    </div>
+    <div class="row">
+        <div class="col-3"><label for="request_type">Request Type</label></div>
+        <div class="col-9">
+            <select name="request_type" id="request_type" class="col-9">
+                <option value="delete">Delete</option>
+                <option value="get" selected>Get</option>
+                <option value="post">Post</option>
+                <option value="put">Put</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3"><label for="authenticated">Authenticated</label></div>
+        <div class="col-9">
+            <select name="authenticated" id="authenticated" class="col-9">
+                <option value="no">No</option>
+                <option value="yes" selected>Yes</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3"><label for="parameters">Parameters</label></div>
+        <div class="col-9"><textarea name="parameters" id="parameters" class="col-9" rows="10">{}</textarea></div>
+    </div>
+    <div class="row">
+        <div class="col-12"><button hx-trigger="click" type="submit">Submit</button></div>
+    </div>
+</form>
+<div id="extra"></div>

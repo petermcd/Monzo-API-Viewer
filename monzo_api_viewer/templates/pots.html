@@ -1,0 +1,31 @@
+<table class="table table-striped table-bordered">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Balance</th>
+        <th>Type</th>
+        <th>Is Locked</th>
+        <th>Is Deleted</th>
+    </tr>
+    </thead>
+    <tbody id="pot-list">
+    {% if pots %}
+        {% for pot in pots %}
+            {% include 'pot.html' %}
+        {% endfor %}
+    {% else %}
+        <tr>
+            <td colspan="5">No pots</td>
+        </tr>
+    {% endif %}
+    </tbody>
+    <tfoot>
+    <tr>
+        <td colspan="5">
+            <button hx-post="/pots" hx-swap="innerHTML" hx-target="#extra" hx-include="#accont-form">
+                Update
+            </button>
+        </td>
+    </tr>
+    </tfoot>
+</table>

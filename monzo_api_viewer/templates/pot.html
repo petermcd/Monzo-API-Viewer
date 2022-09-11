@@ -1,0 +1,8 @@
+<tr id="{% if pot.deleted %}Deleted{% endif %}">
+    <td>{{ pot.name }}</td>
+    <td>{{ currencies[pot.currency] }}{{ "%.2f"|format(pot.balance / 100) }}</td>
+    <td>{{ pot.pot_type }}</td>
+    <td>{% if pot.locked %}Locked{% endif %}</td>
+    <td>{% if pot.deleted %}Deleted{% endif %}</td>
+    <td></td>
+</tr>

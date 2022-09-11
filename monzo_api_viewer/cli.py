@@ -1,10 +1,10 @@
-"""Entry point for Monzo Viewer module."""
-from monzo_viewer.app import app
+"""Entry point for Monzo API Viewer module."""
+from monzo_api_viewer.app import app
 
 
 def start(local_only: bool = True, port: int = 5000, debug: bool = False):
     """
-    Entry point for Monzo Viewer.
+    Entry point for Monzo API Viewer.
 
     Args:
         local_only: Only listen to local interface if True otherwise listen to all

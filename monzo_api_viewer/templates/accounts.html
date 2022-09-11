@@ -1,0 +1,11 @@
+<h2>Accounts</h2>
+<form id="accont-form" hx-swap="innerHTML" hx-target="#extra">
+    {% include 'account_select.html' %}
+    <div class="row">
+        <div class="col-12">
+            <button hx-trigger="click" type="submit" hx-post="/transactions">Fetch Transactions</button>
+            <button hx-trigger="click" type="submit" hx-post="/pots">Fetch Pots</button>
+        </div>
+    </div>
+</form>
+<div id="extra"></div>

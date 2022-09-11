@@ -1,7 +1,6 @@
 """Miscellaneous functions and classes."""
 
 from json import dumps, loads
-from typing import Dict, Union
 
 from monzo.handlers.storage import Storage
 
@@ -26,6 +25,7 @@ class FileSystem(Storage):
         Args:
             file: THe full path (including filename) to the storage file
         """
+        # TODO: Update to store in the database
         self._file = file
 
         self._access_token: str = ''
@@ -95,7 +95,7 @@ class FileSystem(Storage):
         with open(self._file, 'w') as handler:
             handler.write(dumps(content))
 
-    def fetch(self) -> Dict[str, Union[int, str]]:
+    def fetch(self) -> dict[str, int | str]:
         """
         Fetch the Monzo credentials previously stored.
 
@@ -131,7 +131,6 @@ class FileSystem(Storage):
             'access_token',
             'expiry',
         ]
-        print(all(self.__getattribute__(key) for key in keys))
         return all(self.__getattribute__(key) for key in keys)
 
     @property
